@@ -4,14 +4,23 @@
 
 * Manually collect data from online resources
 
-((Markdown table))
+| Language | # of Packages |
+| -- | -- |
+| CSS| 164,585 |
+| Java | 222,852 |
+| Javascript | 323,938 |
+| PHP | 138,771 |
+| Python | 164,852 |
 
 ## Top five
 
 {% svg %}
 
-<!-- barchart with five bars -->
-<rect x="0" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+<rect x="0" width="20" height="16.4" style="fill:rgb(0,229,238);" />
+<rect x="30" width="20" height="22.2" style="fill:rgb(0,229,238);" />
+<rect x="60" width="20" height="32.3" style="fill:rgb(0,229,238);" />
+<rect x="90" width="20" height="13.8" style="fill:rgb(0,229,238);" />
+<rect x="120" width="20" height="16.4" style="fill:rgb(0,229,238);" />
 
 {% endsvg %}
 
@@ -19,7 +28,10 @@
 
 {% svg %}
 
-<!-- same barchart, but the top is highlighted, using css -->
-<rect x="0" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+<rect x="0" width="20" height="16.4" style="fill:rgb(0,229,238);" />
+<rect x="30" width="20" height="22.2" style="fill:rgb(0,229,238);" />
+<rect x="60" width="20" height="32.3" style="fill:rgb(102,255,255);" />
+<rect x="90" width="20" height="13.8" style="fill:rgb(0,229,238);" />
+<rect x="120" width="20" height="16.4" style="fill:rgb(0,229,238);" />
 
 {% endsvg %}

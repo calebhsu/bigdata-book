@@ -9,14 +9,12 @@
 | -- | -- |
 | Assembly | 0 |
 | C | 3 |
-| C++ | 2 |
+| C++ | 3 |
 | Haskell | 1 |
 | Java | 3 |
 | Javascript | 3 |
 | Python | 6 |
 | Ruby | 1 |
-
-((more rows to complete the table))
 
 ## Answer
 
@@ -28,8 +26,22 @@ Python
 
 {% svg %}
 
-<!-- extend this into a barchart -->
-<rect x="0" width="20" height="100" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
-<rect x="30" width="20" height="50" style="fill:rgb(0,0,255);stroke-width:3;stroke:rgb(0,0,0)" />
+<!-- Barchart -->
+<!-- Assembly -->
+<rect x="0" width="20" height="0" style="fill:rgb(0,229,238);"/>
+<!-- C -->
+<rect x="40" width="20" height="30" style="fill:rgb(0,229,238)" />
+<!-- C++ -->
+<rect x="70" width="20" height="30" style="fill:rgb(0,229,238);" />
+<!-- Haskell -->
+<rect x="100" width="20" height="10" style="fill:rgb(0,229,238);" />
+<!-- Java -->
+<rect x="130" width="20" height="30" style="fill:rgb(0,229,238);" />
+<!-- Javascript -->
+<rect x="160" width="20" height="30" style="fill:rgb(0,229,238);" />
+<!-- Python -->
+<rect x="190" width="20" height="60" style="fill:rgb(0,229,238);" />
+<!-- Ruby -->
+<rect x="220" width="20" height="10" style="fill:rgb(0,229,238);" />
 
 {% endsvg %}
