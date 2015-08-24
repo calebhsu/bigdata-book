@@ -8,12 +8,19 @@
 | Language | # of Students |
 | -- | -- |
 | Assembly | 0 |
+| C | 3 |
+| C++ | 2 |
+| Haskell | 1 |
+| Java | 3 |
+| Javascript | 3 |
+| Python | 6 |
+| Ruby | 1 |
 
 ((more rows to complete the table))
 
 ## Answer
 
-((answer))
+Python
 
 ## Visualization
 
