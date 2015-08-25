@@ -40,7 +40,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="Tue Aug 25 2015 10:11:48 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.2.2" data-basepath="../.." data-revision="Tue Aug 25 2015 17:57:23 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -389,7 +389,7 @@
 <p><a href="https://lodash.com/docs" target="_blank">Lodash</a> is one of the most popular utility-belt library.
 It can make you very productive and effective in writing Javascript programs.</p>
 <p>Read Lodash&apos;s page on npm <a href="https://www.npmjs.com/package/lodash" target="_blank">here</a>. How many times
-was it downloaded just last week alone?</p>
+was it downloaded just last week alone? <em>4,107,453 times</em></p>
 <h2 id="examples">Examples</h2>
 <h3 id="array-of-numbers">Array of numbers</h3>
 <p>Let&apos;s create a data array withthe contents: 1,2,3,4,5. This array has 5 items.</p>
@@ -443,31 +443,28 @@ return _.find(data, {name: &apos;Mary&apos;})
 <p>[{&quot;name&quot;:&quot;John&quot;,&quot;age&quot;:45},{&quot;name&quot;:&quot;Mary&quot;,&quot;age&quot;:32},{&quot;name&quot;:&quot;Peter&quot;,&quot;age&quot;:54},{&quot;name&quot;:&quot;Jane&quot;,&quot;age&quot;:12}]</p>
 <h3 id="q-what-are-the-ages-of-these-people">Q: What are the ages of these people?</h3>
 <p><pre>
-// replace this code with your solution that uses lodash
-var result = [45, 32, 54, 12]
+var result = _.pluck(data, &apos;age&apos;)
 return result
 </pre></p>
-<p>The names are 45,32,54,12</p>
+<p>The ages are 45,32,54,12</p>
 <h3 id="q-what-is-the-youngest-age">Q. What is the youngest age?</h3>
 <p><pre>
-// replace this code with your solution that uses lodash
-// hint: use _.pluck and _.min
-var result = 12
+var age = _.pluck(data, &apos;age&apos;)
+var result = _.min(age)
 return result
 </pre></p>
 <p>The youngest age is 12.</p>
 <h3 id="q-what-is-the-oldest-age">Q. What is the oldest age?</h3>
 <p><pre>
-// replace this code with your solution that uses lodash
-var result = 54
+var age = _.pluck(data, &apos;age&apos;)
+var result = _.max(age)
 return result
 </pre></p>
 <p>The oldest age is 54.</p>
 <h3 id="q-who-is-the-youngest-person">Q. Who is the youngest person?</h3>
 <p><pre>
-// replace this code with your solution that uses lodash
-// hint: use your previous solution with _.find
-var result = data[3]
+var age = _.pluck(data, &apos;age&apos;)
+var result = _.find(data, {age: _.min(age)})
 return result
 </pre></p>
 <p>The youngest person is Jane.</p>
