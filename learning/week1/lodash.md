@@ -4,7 +4,7 @@
 It can make you very productive and effective in writing Javascript programs.
 
 Read Lodash's page on npm [here](https://www.npmjs.com/package/lodash). How many times
-was it downloaded just last week alone?
+was it downloaded just last week alone? _4,107,453 times_
 
 ## Examples
 
@@ -79,24 +79,22 @@ Now it's your turn to take the following learning challenges.
 
 The data is
 
-{{ data | dump}}
+{{ data | dump }}
 
 ### Q: What are the ages of these people?
 
 {% lodash %}
-// replace this code with your solution that uses lodash
-var result = [45, 32, 54, 12]
+var result = _.pluck(data, 'age')
 return result
 {% endlodash %}
 
-The names are {{ result }}
+The ages are {{ result }}
 
 ### Q. What is the youngest age?
 
 {% lodash %}
-// replace this code with your solution that uses lodash
-// hint: use _.pluck and _.min
-var result = 12
+var age = _.pluck(data, 'age')
+var result = _.min(age)
 return result
 {% endlodash %}
 
@@ -105,8 +103,8 @@ The youngest age is {{ result }}.
 ### Q. What is the oldest age?
 
 {% lodash %}
-// replace this code with your solution that uses lodash
-var result = 54
+var age = _.pluck(data, 'age')
+var result = _.max(age)
 return result
 {% endlodash %}
 
@@ -115,9 +113,8 @@ The oldest age is {{ result }}.
 ### Q. Who is the youngest person?
 
 {% lodash %}
-// replace this code with your solution that uses lodash
-// hint: use your previous solution with _.find
-var result = data[3]
+var age = _.pluck(data, 'age')
+var result = _.find(data, {age: _.min(age)})
 return result
 {% endlodash %}
 
