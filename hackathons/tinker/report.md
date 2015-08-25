@@ -24,4 +24,4 @@
 
 ## Recommendation
 
-Based on our question, we narrowed down the most popular language to JavaScript. Among the JavaScript frameworks, the most popular framework seems to be AngularJS.
+Based on our question, we narrowed down the most popular language to JavaScript. Among the JavaScript frameworks, the most popular framework seems to be AngularJS because it can be used with HTML.
