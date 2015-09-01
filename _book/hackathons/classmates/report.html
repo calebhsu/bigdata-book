@@ -37,10 +37,8 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/index.html" />
     
-    
-    <link rel="prev" href="../../hackathons/tinker/method.html" />
+    <link rel="prev" href="../../hackathons/classmates/analysis.html" />
     
 
         <!-- head:end -->
@@ -48,7 +46,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -278,7 +276,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.2" data-path="hackathons/tinker/report.html">
+        <li class="chapter " data-level="2.1.2" data-path="hackathons/tinker/report.html">
             
                 
                     <a href="../../hackathons/tinker/report.html">
@@ -359,7 +357,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.4" data-path="hackathons/classmates/report.html">
+        <li class="chapter active" data-level="2.2.4" data-path="hackathons/classmates/report.html">
             
                 
                     <a href="../../hackathons/classmates/report.html">
@@ -489,50 +487,51 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="q-which-languages-have-the-most-total-pushes">Q: Which languages have the most total pushes?</h1>
-<h2 id="data">Data</h2>
-<table>
-<thead>
-<tr>
-<th>Language</th>
-<th># of Total Pushes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Javascript</td>
-<td>3,461,415</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>2,323,315</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>1,810,013</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>1,654,226</td>
-</tr>
-<tr>
-<td>PHP</td>
-<td>1,391,467</td>
-</tr>
-</tbody>
-</table>
-<h2 id="visualization">Visualization</h2>
-<p><svg height="300" width="500">
-
-<rect x="0" width="20" height="346" style="fill:rgb(0,229,238);"/>
-<rect x="30" width="20" height="232" style="fill:rgb(0,229,238);"/>
-<rect x="60" width="20" height="181" style="fill:rgb(0,229,238);"/>
-<rect x="90" width="20" height="165" style="fill:rgb(0,229,238);"/>
-<rect x="120" width="20" height="139" style="fill:rgb(0,229,238);"/>
-
-</svg></p>
-<h2 id="recommendation">Recommendation</h2>
-<p>Based on our question, we narrowed down the most popular language to JavaScript. Among the JavaScript frameworks, the most popular framework seems to be AngularJS because it can be used with HTML.</p>
+                        <h1 id="report">Report</h1>
+<p>As a class, we brainstormed and came up with a long list of further questions we can ask based
+on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
+the following:</p>
+<h1 id="how-many-applied-math-majors-are-there">How many Applied Math majors are there?</h1>
+<p><pre>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;applied math&quot;</span>)
+}))
+</pre></p>
+<p>The answer is 3.</p>
+<h1 id="how-many-people-submitted-after-august-24th">How many people submitted after August 24th?</h1>
+<p><pre>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> date = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">0</span>].split(<span class="string">&apos;-&apos;</span>)[<span class="number">2</span>]
+    <span class="keyword">if</span> (date &gt; <span class="number">24</span>) {
+    	<span class="keyword">return</span> <span class="keyword">true</span>
+    }
+}))
+</pre></p>
+<p>There were 5 people that submitted after August 24th.</p>
+<h1 id="who-was-the-first-person-to-submit-mexican-food-as-their-favorite-food">Who was the first person to submit Mexican food as their favorite food?</h1>
+<p><pre>
+<span class="keyword">var</span> text = _.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.<span class="keyword">include</span>(clean,<span class="string">&quot;mexican&quot;</span>)
+})
+<span class="keyword">var</span> body = _.pluck(text, <span class="string">&quot;body&quot;</span>)
+<span class="keyword">return</span> _.map(body, <span class="keyword">function</span>(names) {
+    <span class="keyword">var</span> <span class="keyword">final</span> = _.first(names.split(<span class="string">&apos;\n&apos;</span>))
+    <span class="keyword">return</span> <span class="keyword">final</span>.split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>].trim()
+})[<span class="number">0</span>]
+</pre></p>
+<p>TJ Romanowski was the first person to submit Mexican food as their favorite food.</p>
+<h1 id="how-many-people-submitted-before-noon">How many people submitted before noon?</h1>
+<p><pre>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> time = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">1</span>].split(<span class="string">&apos;:&apos;</span>)[<span class="number">0</span>]
+    <span class="keyword">if</span> (time &lt; <span class="number">12</span>) {
+    	<span class="keyword">return</span> <span class="keyword">true</span>
+    }
+}))
+</pre></p>
+<p>6 people submitted before noon.</p>
 
                     
                     </section>
@@ -543,10 +542,8 @@
         </div>
 
         
-        <a href="../../hackathons/tinker/method.html" class="navigation navigation-prev " aria-label="Previous page: Method"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/classmates/analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Analysis"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-next " aria-label="Next page: Classmates"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

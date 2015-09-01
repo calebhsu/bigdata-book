@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Report | book</title>
+        <title>Warmup | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/index.html" />
+    <link rel="next" href="../../hackathons/classmates/analysis.html" />
     
     
-    <link rel="prev" href="../../hackathons/tinker/method.html" />
+    <link rel="prev" href="../../hackathons/classmates/data.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.2" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -278,7 +278,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.2" data-path="hackathons/tinker/report.html">
+        <li class="chapter " data-level="2.1.2" data-path="hackathons/tinker/report.html">
             
                 
                     <a href="../../hackathons/tinker/report.html">
@@ -329,7 +329,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.2" data-path="hackathons/classmates/warmup.html">
+        <li class="chapter active" data-level="2.2.2" data-path="hackathons/classmates/warmup.html">
             
                 
                     <a href="../../hackathons/classmates/warmup.html">
@@ -489,50 +489,62 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="q-which-languages-have-the-most-total-pushes">Q: Which languages have the most total pushes?</h1>
-<h2 id="data">Data</h2>
-<table>
-<thead>
-<tr>
-<th>Language</th>
-<th># of Total Pushes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Javascript</td>
-<td>3,461,415</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>2,323,315</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>1,810,013</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>1,654,226</td>
-</tr>
-<tr>
-<td>PHP</td>
-<td>1,391,467</td>
-</tr>
-</tbody>
-</table>
-<h2 id="visualization">Visualization</h2>
-<p><svg height="300" width="500">
+                        <h1 id="warmup">Warmup</h1>
+<p>As warmup, let&apos;s being with some simple questions.</p>
+<p>The comments data is imported as <code>data.comments</code>.</p>
+<h2 id="how-many-people-have-submitted-comments">How many people have submitted comments?</h2>
+<p><pre>
+<span class="keyword">return</span> _.size(data.comments)
+</pre></p>
+<p>There are 26 submissions.</p>
+<h2 id="who-is-the-first-person-to-submit-a-comment">Who is the first person to submit a comment?</h2>
+<p>We can get the data of the first comment by</p>
+<p><pre>
+<span class="keyword">return</span> _.first(data.comments)
+</pre></p>
+<p>The result is</p>
+<pre>{
+ &quot;url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/comments/133203904&quot;,
+ &quot;html_url&quot;: &quot;https://github.com/bigdatahci2015/forum/issues/1#issuecomment-133203904&quot;,
+ &quot;issue_url&quot;: &quot;https://api.github.com/repos/bigdatahci2015/forum/issues/1&quot;,
+ &quot;id&quot;: 133203904,
+ &quot;user&quot;: {
+  &quot;login&quot;: &quot;willzfarmer&quot;,
+  &quot;id&quot;: 546524,
+  &quot;avatar_url&quot;: &quot;https://avatars.githubusercontent.com/u/546524?v=3&quot;,
+  &quot;gravatar_id&quot;: &quot;&quot;,
+  &quot;url&quot;: &quot;https://api.github.com/users/willzfarmer&quot;,
+  &quot;html_url&quot;: &quot;https://github.com/willzfarmer&quot;,
+  &quot;followers_url&quot;: &quot;https://api.github.com/users/willzfarmer/followers&quot;,
+  &quot;following_url&quot;: &quot;https://api.github.com/users/willzfarmer/following{/other_user}&quot;,
+  &quot;gists_url&quot;: &quot;https://api.github.com/users/willzfarmer/gists{/gist_id}&quot;,
+  &quot;starred_url&quot;: &quot;https://api.github.com/users/willzfarmer/starred{/owner}{/repo}&quot;,
+  &quot;subscriptions_url&quot;: &quot;https://api.github.com/users/willzfarmer/subscriptions&quot;,
+  &quot;organizations_url&quot;: &quot;https://api.github.com/users/willzfarmer/orgs&quot;,
+  &quot;repos_url&quot;: &quot;https://api.github.com/users/willzfarmer/repos&quot;,
+  &quot;events_url&quot;: &quot;https://api.github.com/users/willzfarmer/events{/privacy}&quot;,
+  &quot;received_events_url&quot;: &quot;https://api.github.com/users/willzfarmer/received_events&quot;,
+  &quot;type&quot;: &quot;User&quot;,
+  &quot;site_admin&quot;: false
+ },
+ &quot;created_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
+ &quot;updated_at&quot;: &quot;2015-08-20T22:39:50Z&quot;,
+ &quot;body&quot;: &quot;Name: William Farmer\r\nMajor: Applied Math w/ Minor in Computer Science\r\nFavorite Programming Language: Python\r\nFavorite Food: Sushi&quot;
+}</pre>
 
-<rect x="0" width="20" height="346" style="fill:rgb(0,229,238);"/>
-<rect x="30" width="20" height="232" style="fill:rgb(0,229,238);"/>
-<rect x="60" width="20" height="181" style="fill:rgb(0,229,238);"/>
-<rect x="90" width="20" height="165" style="fill:rgb(0,229,238);"/>
-<rect x="120" width="20" height="139" style="fill:rgb(0,229,238);"/>
+<p>The person&apos;s name is willzfarmer.</p>
+<h2 id="what-is-willzfarmer-s-favorite-food">What is willzfarmer&apos;s favorite food?</h2>
+<p>We will need to parse the comment to retrieve this data.</p>
+<p>The comment text is</p>
+<pre>&quot;Name: William Farmer\r\nMajor: Applied Math w/ Minor in Computer Science\r\nFavorite Programming Language: Python\r\nFavorite Food: Sushi&quot;</pre>
 
-</svg></p>
-<h2 id="recommendation">Recommendation</h2>
-<p>Based on our question, we narrowed down the most popular language to JavaScript. Among the JavaScript frameworks, the most popular framework seems to be AngularJS because it can be used with HTML.</p>
+<p>The code to retrieve the data about the favorite food is (hint: use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank">split()</a>).</p>
+<p><pre>
+<span class="keyword">var</span> text = _.first(data.comments).body
+<span class="keyword">var</span> food = _.last(text.split(<span class="string">&apos;\n&apos;</span>))
+<span class="keyword">return</span> _.last(food.split(<span class="string">&apos;: &apos;</span>))
+</pre></p>
+<p>So, willzfarmer&apos;s favorite food is Sushi.</p>
 
                     
                     </section>
@@ -543,10 +555,10 @@
         </div>
 
         
-        <a href="../../hackathons/tinker/method.html" class="navigation navigation-prev " aria-label="Previous page: Method"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/classmates/data.html" class="navigation navigation-prev " aria-label="Previous page: Data"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-next " aria-label="Next page: Classmates"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/classmates/analysis.html" class="navigation navigation-next " aria-label="Next page: Analysis"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
