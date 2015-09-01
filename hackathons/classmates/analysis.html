@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Report | book</title>
+        <title>Analysis | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -37,10 +37,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/index.html" />
+    <link rel="next" href="../../hackathons/classmates/report.html" />
     
     
-    <link rel="prev" href="../../hackathons/tinker/method.html" />
+    <link rel="prev" href="../../hackathons/classmates/warmup.html" />
     
 
         <!-- head:end -->
@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.1.2" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -278,7 +278,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.2" data-path="hackathons/tinker/report.html">
+        <li class="chapter " data-level="2.1.2" data-path="hackathons/tinker/report.html">
             
                 
                     <a href="../../hackathons/tinker/report.html">
@@ -344,7 +344,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
+        <li class="chapter active" data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
             
                 
                     <a href="../../hackathons/classmates/analysis.html">
@@ -489,50 +489,68 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="q-which-languages-have-the-most-total-pushes">Q: Which languages have the most total pushes?</h1>
-<h2 id="data">Data</h2>
-<table>
-<thead>
-<tr>
-<th>Language</th>
-<th># of Total Pushes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Javascript</td>
-<td>3,461,415</td>
-</tr>
-<tr>
-<td>Java</td>
-<td>2,323,315</td>
-</tr>
-<tr>
-<td>CSS</td>
-<td>1,810,013</td>
-</tr>
-<tr>
-<td>Python</td>
-<td>1,654,226</td>
-</tr>
-<tr>
-<td>PHP</td>
-<td>1,391,467</td>
-</tr>
-</tbody>
-</table>
-<h2 id="visualization">Visualization</h2>
-<p><svg height="300" width="500">
+                        <h1 id="analysis">Analysis</h1>
+<p>After completing the warmup exercises, your task is to do four more slightly
+more challenges analyses.</p>
+<h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
+<p><pre>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;sushi&quot;</span>)
+}))
+</pre></p>
+<p>The answer is 5.</p>
+<h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
+<p><pre>
+<span class="keyword">var</span> text = _.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;python&quot;</span>)
+})
+<span class="keyword">var</span> body = _.pluck(text, <span class="string">&quot;body&quot;</span>)
+<span class="keyword">return</span> _.map(body, <span class="keyword">function</span>(names) {
+    <span class="keyword">var</span> <span class="keyword">final</span> = _.first(names.split(<span class="string">&apos;\n&apos;</span>))
+    <span class="keyword">return</span> <span class="keyword">final</span>.split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>].trim()
+})
+</pre></p>
+<p>Their names are William Farmer,Heather Witte,Zach Lamb,Zhili Yang,John Cronk,Denis Kazakov,Caleb Hsu,Karen Blakemore,Sanketh S Shetty,Andrey Shprengel.</p>
+<h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
+<p><pre>
+<span class="keyword">var</span> javascript = _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;javascript&quot;</span>)
+}))
 
-<rect x="0" width="20" height="346" style="fill:rgb(0,229,238);"/>
-<rect x="30" width="20" height="232" style="fill:rgb(0,229,238);"/>
-<rect x="60" width="20" height="181" style="fill:rgb(0,229,238);"/>
-<rect x="90" width="20" height="165" style="fill:rgb(0,229,238);"/>
-<rect x="120" width="20" height="139" style="fill:rgb(0,229,238);"/>
+<span class="keyword">var</span> java = _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">if</span> (_.includes(clean, <span class="string">&quot;javascript&quot;</span>) == <span class="keyword">false</span>) {
+        <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;java&quot;</span>)
+    }
+    
+}))    
 
-</svg></p>
-<h2 id="recommendation">Recommendation</h2>
-<p>Based on our question, we narrowed down the most popular language to JavaScript. Among the JavaScript frameworks, the most popular framework seems to be AngularJS because it can be used with HTML.</p>
+<span class="keyword">if</span> (javascript &gt; java) {
+    <span class="keyword">return</span> <span class="string">&quot;JavaScript&quot;</span>
+}
+<span class="keyword">else</span> {
+    <span class="keyword">return</span> <span class="string">&quot;Java&quot;</span>
+} 
+</pre></p>
+<p>The answer is Java.</p>
+<h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
+<p><pre>
+<span class="keyword">return</span> _find(data.comments, {user: {login: kjblakemore}})
+</pre><div class="console error">ReferenceError: _find is not defined
+    at Object.eval (eval at <anonymous> (C:\Users\Caleb\book\node_modules\gitbook-plugin-bigdata\index.js:44:29), <anonymous>:4:8)
+    at Object.module.exports.blocks.lodash.process (C:\Users\Caleb\book\node_modules\gitbook-plugin-bigdata\index.js:48:37)
+    at null.<anonymous> (C:\Users\Caleb\.gitbook\versions\2.2.0\lib\template.js:136:21)
+    at C:\Users\Caleb\.gitbook\versions\2.2.0\lib\template.js:267:29
+    at _fulfilled (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:787:54)
+    at self.promiseDispatch.done (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:816:30)
+    at Promise.promise.promiseDispatch (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:749:13)
+    at C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:810:14
+    at flush (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:108:17)
+    at process._tickCallback (node.js:355:11)</anonymous></anonymous></anonymous></div></p>
+<p>Their names are .</p>
 
                     
                     </section>
@@ -543,10 +561,10 @@
         </div>
 
         
-        <a href="../../hackathons/tinker/method.html" class="navigation navigation-prev " aria-label="Previous page: Method"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-prev " aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/index.html" class="navigation navigation-next " aria-label="Next page: Classmates"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/classmates/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
