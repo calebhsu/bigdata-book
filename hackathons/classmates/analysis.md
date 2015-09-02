@@ -61,7 +61,15 @@ The answer is {{result}}.
 ## Who like the same food as `kjblakemore`?
 
 {% lodash %}
-return _find(data.comments, {user: {login: kjblakemore}})
+var user = _.find(data.comments, {user: {login: "kjblakemore"}}).body
+var food = user.split('\n')[3].split(': ')[1]
+
+var students = _.filter(data.comments, function(comments) {
+    var clean = comments.body.toString().toLowerCase()
+    food = food.toLowerCase()
+    return _.includes(clean, food)
+})
+return _.pluck(students, "user.login")
 {% endlodash %}
 
 Their names are {{result}}.

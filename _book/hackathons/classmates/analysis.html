@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Tue Sep 01 2015 17:52:58 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Tue Sep 01 2015 18:12:20 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -538,19 +538,18 @@ more challenges analyses.</p>
 <p>The answer is Java.</p>
 <h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
 <p><pre>
-<span class="keyword">return</span> _find(data.comments, {user: {login: kjblakemore}})
-</pre><div class="console error">ReferenceError: _find is not defined
-    at Object.eval (eval at <anonymous> (C:\Users\Caleb\book\node_modules\gitbook-plugin-bigdata\index.js:44:29), <anonymous>:4:8)
-    at Object.module.exports.blocks.lodash.process (C:\Users\Caleb\book\node_modules\gitbook-plugin-bigdata\index.js:48:37)
-    at null.<anonymous> (C:\Users\Caleb\.gitbook\versions\2.2.0\lib\template.js:136:21)
-    at C:\Users\Caleb\.gitbook\versions\2.2.0\lib\template.js:267:29
-    at _fulfilled (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:787:54)
-    at self.promiseDispatch.done (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:816:30)
-    at Promise.promise.promiseDispatch (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:749:13)
-    at C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:810:14
-    at flush (C:\Users\Caleb\.gitbook\versions\2.2.0\node_modules\q\q.js:108:17)
-    at process._tickCallback (node.js:355:11)</anonymous></anonymous></anonymous></div></p>
-<p>Their names are .</p>
+<span class="keyword">var</span> user = _.find(data.comments, {user: {login: <span class="string">&quot;kjblakemore&quot;</span>}}).body
+<span class="keyword">var</span> food = user.split(<span class="string">&apos;\n&apos;</span>)[<span class="number">3</span>].split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>]
+
+<span class="keyword">var</span> students = _.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    food = food.toLowerCase()
+    <span class="keyword">return</span> _.includes(clean, food)
+})
+
+<span class="keyword">return</span> _.pluck(students, <span class="string">&quot;user.login&quot;</span>)
+</pre></p>
+<p>Their names are kjblakemore.</p>
 
                     
                     </section>
