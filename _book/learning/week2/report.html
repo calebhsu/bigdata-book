@@ -48,7 +48,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Thu Sep 03 2015 10:58:18 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="1.3.1" data-basepath="../.." data-revision="Thu Sep 03 2015 11:07:58 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -529,26 +529,47 @@
 <p>There are 26 students who gave a self-introduction. As a
 class, we brainstormed and came up with a long list of further questions we can
 ask based on this data. Our team chose to tackle on the following:</p>
-<h1 id="-question-1">(Question 1)</h1>
+<h1 id="how-many-applied-math-majors-are-there">How many Applied Math majors are there?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;applied math&quot;</span>)
+}))
 </pre></p>
-<p>(writeup)</p>
-<h1 id="-question-2">(Question 2)</h1>
+<p>The answer is 3.</p>
+<h1 id="how-many-people-submitted-after-august-24th">How many people submitted after August 24th?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> date = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">0</span>].split(<span class="string">&apos;-&apos;</span>)[<span class="number">2</span>]
+    <span class="keyword">if</span> (date &gt; <span class="number">24</span>) {
+        <span class="keyword">return</span> <span class="keyword">true</span>
+    }
+}))
 </pre></p>
-<p>(writeup)</p>
-<h1 id="-question-3">(Question 3)</h1>
+<p>There were 5 people that submitted after August 24th.</p>
+<h1 id="who-was-the-first-person-to-submit-mexican-food-as-their-favorite-food">Who was the first person to submit Mexican food as their favorite food?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">var</span> text = _.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
+    <span class="keyword">return</span> _.<span class="keyword">include</span>(clean,<span class="string">&quot;mexican&quot;</span>)
+})
+<span class="keyword">var</span> body = _.pluck(text, <span class="string">&quot;body&quot;</span>)
+<span class="keyword">return</span> _.map(body, <span class="keyword">function</span>(names) {
+    <span class="keyword">var</span> <span class="keyword">final</span> = _.first(names.split(<span class="string">&apos;\n&apos;</span>))
+    <span class="keyword">return</span> <span class="keyword">final</span>.split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>].trim()
+})[<span class="number">0</span>]
 </pre></p>
-<p>(writeup)</p>
-<h1 id="-question-4">(Question 4)</h1>
+<p>TJ Romanowski was the first person to submit Mexican food as their favorite food.</p>
+<h1 id="how-many-people-submitted-before-noon">How many people submitted before noon?</h1>
 <p><pre>
-<span class="keyword">return</span> <span class="string">&quot;[answer]&quot;</span>
+<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
+    <span class="keyword">var</span> time = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">1</span>].split(<span class="string">&apos;:&apos;</span>)[<span class="number">0</span>]
+    <span class="keyword">if</span> (time &lt; <span class="number">12</span>) {
+        <span class="keyword">return</span> <span class="keyword">true</span>
+    }
+}))
 </pre></p>
-<p>(writeup)</p>
+<p>6 people submitted before noon.</p>
 
                     
                     </section>
