@@ -23,8 +23,8 @@ The answer is {{result}}.
 return _.size(_.filter(data.comments, function(comments) {
     var date = comments.created_at.split('T')[0].split('-')[2]
     if (date > 24) {
-    	return true
-	}
+        return true
+    }
 }))
 {% endlodash %}
 
@@ -34,8 +34,8 @@ There were {{result}} people that submitted after August 24th.
 
 {% lodash %}
 var text = _.filter(data.comments, function(comments) {
-	var clean = comments.body.toString().toLowerCase()
-	return _.include(clean,"mexican")
+    var clean = comments.body.toString().toLowerCase()
+    return _.include(clean,"mexican")
 })
 var body = _.pluck(text, "body")
 return _.map(body, function(names) {
@@ -51,8 +51,8 @@ return _.map(body, function(names) {
 return _.size(_.filter(data.comments, function(comments) {
     var time = comments.created_at.split('T')[1].split(':')[0]
     if (time < 12) {
-    	return true
-	}
+        return true
+    }
 }))
 {% endlodash %}
 
