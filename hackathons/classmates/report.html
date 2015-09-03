@@ -46,7 +46,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Thu Sep 03 2015 10:58:18 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Thu Sep 03 2015 11:07:58 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -540,7 +540,7 @@ the following:</p>
 <span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
     <span class="keyword">var</span> date = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">0</span>].split(<span class="string">&apos;-&apos;</span>)[<span class="number">2</span>]
     <span class="keyword">if</span> (date &gt; <span class="number">24</span>) {
-    	<span class="keyword">return</span> <span class="keyword">true</span>
+        <span class="keyword">return</span> <span class="keyword">true</span>
     }
 }))
 </pre></p>
@@ -563,7 +563,7 @@ the following:</p>
 <span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
     <span class="keyword">var</span> time = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">1</span>].split(<span class="string">&apos;:&apos;</span>)[<span class="number">0</span>]
     <span class="keyword">if</span> (time &lt; <span class="number">12</span>) {
-    	<span class="keyword">return</span> <span class="keyword">true</span>
+        <span class="keyword">return</span> <span class="keyword">true</span>
     }
 }))
 </pre></p>
