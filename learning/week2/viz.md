@@ -17,28 +17,28 @@ including the controls, widgets ...etc.
 
 # How big of a deal Tableau really is?
 
-According to [Forbes](http://www.forbes.com/sites/greatspeculations/2015/04/15/a-closer-look-at-tableaus-customer-base-growth/), Tableau is a growing startup that had around 4,400 customers at the end of 2010, and was projected to have 26,000 customers in 2014. Due to the fact that the business analytics industry grew by 8% in 2012 and 2013, software like Tableau is definitely in high demand, especially due to it's attempts to make data visualization easy and accessible to non-programmers.
+According to [Forbes](http://www.forbes.com/sites/greatspeculations/2015/04/15/a-closer-look-at-tableaus-customer-base-growth/), Tableau is a growing startup in business analytics that had around 4,400 customers at the end of 2010, and was projected to have 26,000 customers in 2014. Due to the fact that the business analytics industry grew by 8% in 2012 and 2013, software like Tableau is definitely in high demand, especially due to its attempts to make data visualization easy and accessible to non-programmers.
 
 # How many Applied Math majors are there?
 
-![APPM Piechart](q1_appm.png)
+![Applied Math Piechart](q1appm.png)
 
 The ratio of Applied Math majors to Computer Science and other majors is displayed by the yellow slice of the pie chart.
 
 # How many people submitted after August 24th?
 
-![Submission Barchart](q2_aug24.png)
+![Submission Barchart](q2aug24.png)
 
 The top bar displays the numbers of students who submitted after August 24th, while the bottom bar displays the number of students who submitted before.
 
 # Who was the first person to submit Mexican food as their favorite food?
 
-![Order Submitted](q3_order.png)
+![Order Submitted](q3order.png)
 
 The order of submissions is on the y-axis and grows downwards; therefore the first block displayed is the first student who submitted, accompanied by their order of submission.
 
 # How many people submitted before noon? 
 
-![Before and After Noon](q3_noon.png)
+![Before and After Noon](q3noon.png)
 
 The light blue boxes indicate the students who submitted before noon, while the dark blue boxes indicate students who submitted after noon.

@@ -15,7 +15,7 @@ return _.size(_.filter(data.comments, function(comments) {
 }))
 {% endlodash %}
 
-The answer is {{result}}.
+There are {{result}} Applied Math majors.
 
 # How many people submitted after August 24th?
 
