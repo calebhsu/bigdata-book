@@ -39,6 +39,6 @@ The order of submissions is on the y-axis and grows downwards; therefore the fir
 
 # How many people submitted before noon? 
 
-![Before and After Noon](q3noon.png)
+![Before and After Noon](q4noon.png)
 
 The light blue boxes indicate the students who submitted before noon, while the dark blue boxes indicate students who submitted after noon.
