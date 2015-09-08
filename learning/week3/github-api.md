@@ -56,46 +56,61 @@ Now it's your turn to answer the following questions using the real data.
 ### How many issues have been created to date in our class's forum repository?
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/repos/bigdatahci2015/forum/issues
 {% endgithubapi %}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return _.size(data)
 {% endlodash %}
+
+There are {{ result }} issues in the forum repository.
 
 ### What are the titles of these issues?
 
-(answer)
+{% lodash %}
+return _.pluck(data, 'title')
+{% endlodash %}
+
+The titles of the issues are {{ result }}. 
 
 ### How many repository have been created to date for our class?
 
 Our class's Github organization is [bigdatahci2015](https://github.com/bigdatahci2015/).
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/users/bigdatahci2015/repos
 {% endgithubapi %}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return _.size(data)
 {% endlodash %}
+
+{{ result }} repositories have been created for this class.
 
 ### What are the fork counts of our class's repositories?
 
-(answer)
+{% lodash %}
+return _.pluck(data, 'forks')
+{% endlodash %}
+
+There are {{ result }} forks in each of our class's repositories.
 
 ### How many public repositories does the user `doubleshow` have?
 
 {% githubapi %}
-// enter the URL to access the Github API to get the data for this question
+https://api.github.com/users/doubleshow
 {% endgithubapi %}
 
 {% lodash %}
-// add lodash code to process the data and generate the answer
-return 'something'
+return data.public_repos
 {% endlodash %}
 
-### How many public gists does the user `doubleshow` have?
+doubleshow has {{ result }} repositories.
 
-(answer)
+### How many public Gists does the user `doubleshow` have?
+
+{% lodash %}
+return data.public_gists
+{% endlodash %}
+
+doubleshow has {{ result }} public Gists.
