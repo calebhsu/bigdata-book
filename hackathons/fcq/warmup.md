@@ -74,7 +74,6 @@ var ret = _.pick(_.mapValues(subjects, function(d) {
     return x > 5000
 })
 return ret
-return {"IPHY": 5507,"MATH": 8725,"PHIL": 5672,"PHYS": 8099,"PSCI": 5491}
 {% endlodash %}
 
 <table>
