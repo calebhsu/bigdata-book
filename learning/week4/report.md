@@ -87,6 +87,8 @@ return {Department: (_.invert(departments))[worst], Average_GPA: worst}
 return "[answer]"
 {% endlodash %}
 
+* Did not complete in time / send result to team
+
 # Which classes (with specific professors) damaged the most students (sort by:D + DF + F + WDRAW rating)? 
 #### by Denis Kazakov
 
