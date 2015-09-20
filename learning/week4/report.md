@@ -89,7 +89,7 @@ return "[answer]"
 
 * Did not complete in time / send result to team
 
-# Which classes (with specific professors) damaged the most students (sort by:D + DF + F + WDRAW rating)? 
+# Which classes (with specific professors) damaged the most students (sort by: C + D + F)? 
 #### by Denis Kazakov
 
 {% lodash %}

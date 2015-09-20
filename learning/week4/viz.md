@@ -19,37 +19,26 @@ how to transform this JSON file into a format that can be fed into Tableau. As
 a junior and senior, you are expected to be able to look around the Internet
 to problem solve.
 
-# (Question 1)
+# What department should I take classes in if I want to boost my GPA? 
 
-![screenshot](screenshot.png)
+![Highest GPA](q1_highestgpa.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The largest box in the upper left displays the subject name and label for the department of classes in which the percentage of students who receive an A is the highest. 
 
-# (Question 2)
+# Which classes have the maximum hours spent (13-15) per week? 
 
-![screenshot](screenshot.png)
+![Highest Workload](q2_workload.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The table lists the courses in each department that have the highest workload in terms of hours spent on the class per week.
 
-# (Question 3)
+# What department has the lowest average GPA?
 
-![screenshot](screenshot.png)
+![Lowest GPA](q3_lowestgpa.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
+The lightest bubbles indicate departments with the lowest GPA. The data was filtered to only display departments with average GPAs of 3.25 and lower for readability purposes.
 
-# (Question 4)
+# Which classes (with specific professors) damaged the most students? 
 
-![screenshot](screenshot.png)
+![Damaged Students](q4_damage.png)
 
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)
-
-# (Question 5)
-
-![screenshot](screenshot.png)
-
-(write your explanation for the reader as to where to look at this chart in order
-    to see the answer)    
+The area graphs under each class show the percentage of students who received a C, C-, D, and F in the class respectively. The data was filtered to only display classes where the percentage of students with bad grades was greater than 10%.
