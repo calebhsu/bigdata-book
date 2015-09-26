@@ -29,6 +29,14 @@
         
     
         
+        <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-bigdata/jquery.jsonview.css">
+        
+    
+        
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+        
+    
+        
         <link rel="stylesheet" href="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
         
     
@@ -48,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Sun Sep 20 2015 13:20:08 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.2.4" data-basepath="../.." data-revision="Sat Sep 26 2015 15:47:46 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -379,6 +387,72 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6" data-path="learning/week5/index.html">
+            
+                
+                    <a href="../../learning/week5/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        Week 5
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="learning/week5/birdstrike-report.html">
+            
+                
+                    <a href="../../learning/week5/birdstrike-report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.1.</b>
+                        
+                        Birdstrike Report
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="learning/week5/viz-steps.html">
+            
+                
+                    <a href="../../learning/week5/viz-steps.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.2.</b>
+                        
+                        Viz Intro
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="learning/week5/viz-drills.html">
+            
+                
+                    <a href="../../learning/week5/viz-drills.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.3.</b>
+                        
+                        Viz Drills
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -583,6 +657,42 @@
             
         </li>
     
+        <li class="chapter " data-level="2.4" data-path="hackathons/birdstrikes/index.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        Birdstrikes
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" data-path="hackathons/birdstrikes/report.html">
+            
+                
+                    <a href="../../hackathons/birdstrikes/report.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.1.</b>
+                        
+                        Report
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
             </ul>
             
@@ -698,45 +808,37 @@
 on the &quot;self-introduction&quot; data. Out of these questions, our team chose to tackle on
 the following:</p>
 <h1 id="how-many-applied-math-majors-are-there">How many Applied Math majors are there?</h1>
-<p><pre>
-<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
-    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
-    <span class="keyword">return</span> _.includes(clean, <span class="string">&quot;applied math&quot;</span>)
-}))
-</pre></p>
+<p><pre><code>return _.size(_.filter(data.comments, function(comments) {
+    var clean = comments.body.toString().toLowerCase()
+    return _.includes(clean, &quot;applied math&quot;)
+}))</code></pre></p>
 <p>The answer is 3.</p>
 <h1 id="how-many-people-submitted-after-august-24th">How many people submitted after August 24th?</h1>
-<p><pre>
-<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
-    <span class="keyword">var</span> date = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">0</span>].split(<span class="string">&apos;-&apos;</span>)[<span class="number">2</span>]
-    <span class="keyword">if</span> (date &gt; <span class="number">24</span>) {
-        <span class="keyword">return</span> <span class="keyword">true</span>
+<p><pre><code>return _.size(_.filter(data.comments, function(comments) {
+    var date = comments.created_at.split(&apos;T&apos;)[0].split(&apos;-&apos;)[2]
+    if (date &gt; 24) {
+        return true
     }
-}))
-</pre></p>
+}))</code></pre></p>
 <p>There were 5 people that submitted after August 24th.</p>
 <h1 id="who-was-the-first-person-to-submit-mexican-food-as-their-favorite-food">Who was the first person to submit Mexican food as their favorite food?</h1>
-<p><pre>
-<span class="keyword">var</span> text = _.filter(data.comments, <span class="keyword">function</span>(comments) {
-    <span class="keyword">var</span> clean = comments.body.toString().toLowerCase()
-    <span class="keyword">return</span> _.<span class="keyword">include</span>(clean,<span class="string">&quot;mexican&quot;</span>)
+<p><pre><code>var text = _.filter(data.comments, function(comments) {
+    var clean = comments.body.toString().toLowerCase()
+    return _.include(clean,&quot;mexican&quot;)
 })
-<span class="keyword">var</span> body = _.pluck(text, <span class="string">&quot;body&quot;</span>)
-<span class="keyword">return</span> _.map(body, <span class="keyword">function</span>(names) {
-    <span class="keyword">var</span> <span class="keyword">final</span> = _.first(names.split(<span class="string">&apos;\n&apos;</span>))
-    <span class="keyword">return</span> <span class="keyword">final</span>.split(<span class="string">&apos;: &apos;</span>)[<span class="number">1</span>].trim()
-})[<span class="number">0</span>]
-</pre></p>
+var body = _.pluck(text, &quot;body&quot;)
+return _.map(body, function(names) {
+    var final = _.first(names.split(&apos;\n&apos;))
+    return final.split(&apos;: &apos;)[1].trim()
+})[0]</code></pre></p>
 <p>TJ Romanowski was the first person to submit Mexican food as their favorite food.</p>
 <h1 id="how-many-people-submitted-before-noon">How many people submitted before noon?</h1>
-<p><pre>
-<span class="keyword">return</span> _.size(_.filter(data.comments, <span class="keyword">function</span>(comments) {
-    <span class="keyword">var</span> time = comments.created_at.split(<span class="string">&apos;T&apos;</span>)[<span class="number">1</span>].split(<span class="string">&apos;:&apos;</span>)[<span class="number">0</span>]
-    <span class="keyword">if</span> (time &lt; <span class="number">12</span>) {
-        <span class="keyword">return</span> <span class="keyword">true</span>
+<p><pre><code>return _.size(_.filter(data.comments, function(comments) {
+    var time = comments.created_at.split(&apos;T&apos;)[1].split(&apos;:&apos;)[0]
+    if (time &lt; 12) {
+        return true
     }
-}))
-</pre></p>
+}))</code></pre></p>
 <p>6 people submitted before noon.</p>
 
                     
@@ -758,6 +860,18 @@ the following:</p>
 
         
 <script src="../../gitbook/app.js"></script>
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/bigdata.js"></script>
+    
+
+    
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    
+
+    
+    <script src="../../gitbook/plugins/gitbook-plugin-bigdata/jquery.jsonview.js"></script>
+    
 
     
     <script src="../../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
