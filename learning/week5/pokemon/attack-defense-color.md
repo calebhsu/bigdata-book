@@ -95,17 +95,24 @@ function computeY(d, i) {
 //       each Pokemon's defense point with respect to it to obtain a value 'r'
 //       between 0 and 255. Generate a different rgb(r,0,0) string
 function computeColor(d, i) {
-    return 'rgb(200,0,0)'
+    var maxDef = _.max(_.pluck(data, 'Defense'))
+    var red = (d.Defense / maxDef) * 255
+    return 'rgb(' + Math.round(red) + ',0,0)'
+}
+
+function computeLabel(d, i) {
+    return d.Name  
 }
 
 var viz = _.map(data, function(d, i){
-            return {
-                x: computeX(d, i),
-                y: computeY(d, i),
-                width: computeWidth(d, i),
-                color: computeColor(d, i)                
-            }
-         })
+  return {
+      x: computeX(d, i),
+      y: computeY(d, i),
+      width: computeWidth(d, i),
+      color: computeColor(d, i),
+      label: computeLabel(d, i)             
+  }
+})
 console.log(viz)
 
 var result = _.map(viz, function(d){
@@ -120,7 +127,10 @@ return result.join('\n')
          height="20"
          style="fill:${d.color};
                 stroke-width:1;
-                stroke:rgb(0,0,0)" />    
+                stroke:rgb(0,0,0)" />  
+    <text transform="translate(0 15)">
+        ${d.label}
+    </text>  
 </g>
 
 {% output %}
