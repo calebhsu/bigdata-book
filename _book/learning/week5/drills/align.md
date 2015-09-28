@@ -18,11 +18,11 @@ function computeX(d, i) {
 }
 
 function computeHeight(d, i) {
-    return i * 20 + 100
+    return d.pop / 3484459.59
 }
 
 function computeY(d, i) {
-    return 400 - i * 20 - 100
+    return 400 - (d.pop / 3484459.59)
 }
 
 function computeColor(d, i) {
@@ -30,13 +30,13 @@ function computeColor(d, i) {
 }
 
 var viz = _.map(data, function(d, i){
-            return {
-                x: computeX(d, i),
-                y: computeY(d, i),
-                height: computeHeight(d, i),
-                color: computeColor(d, i)
-            }
-         })
+    return {
+        x: computeX(d, i),
+        y: computeY(d, i),
+        height: computeHeight(d, i),
+        color: computeColor(d, i)
+    }
+ })
 console.log(viz)
 
 var result = _.map(viz, function(d){

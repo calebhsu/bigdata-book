@@ -84,7 +84,7 @@ function computeX(d, i) {
 }
 
 function computeWidth(d, i) {
-    return i * 20 + 50
+    return d.Attack
 }
 
 function computeY(d, i) {
@@ -96,13 +96,13 @@ function computeColor(d, i) {
 }
 
 var viz = _.map(data, function(d, i){
-            return {
-                x: computeX(d, i),
-                y: computeY(d, i),
-                width: computeWidth(d, i),
-                color: computeColor(d, i)
-            }
-         })
+    return {
+        x: computeX(d, i),
+        y: computeY(d, i),
+        width: computeWidth(d, i),
+        color: computeColor(d, i)
+    }
+ })
 console.log(viz)
 
 var result = _.map(viz, function(d){
