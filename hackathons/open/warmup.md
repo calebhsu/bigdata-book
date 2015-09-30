@@ -21,46 +21,52 @@ var groups = _.groupBy(data, function(d){
     return d['CrsPBAColl']
 })
 
-// TODO: add real code to convert groups (which is an object) into an array like below
-// This array should have a lot more elements.
-var counts = [{"name": "AS","count": 3237},
-    {"name": "BU","count": 378},
-    {"name": "EB","count": 139},
-    {"name": "EN","count": 573}]
+var count = _.mapValues(groups, function(g) {
+    return _.size(g)
+})
 
-console.log(counts)
+var keys = _.keys(count)
 
-// TODO: modify the code below to produce a nice vertical bar charts
+var final = _.map(keys, function(key) {
+    return {"name": key, "count": count[key]}
+})
+
+console.log(final)
 
 function computeX(d, i) {
-    return 0
+    return 40 * i
 }
 
 function computeHeight(d, i) {
-    return 20
+    return d.count / 10
 }
 
 function computeWidth(d, i) {
-    return 20 * i + 100
+    return 20
 }
 
 function computeY(d, i) {
-    return 20 * i
+    return 400 - (d.count / 10)
 }
 
 function computeColor(d, i) {
     return 'red'
 }
 
-var viz = _.map(counts, function(d, i){
-            return {
-                x: computeX(d, i),
-                y: computeY(d, i),
-                height: computeHeight(d, i),
-                width: computeWidth(d, i),
-                color: computeColor(d, i)
-            }
-         })
+function computeLabel(d, i) {
+    return d.name.substring(0,2)
+}
+
+var viz = _.map(final, function(d, i){
+    return {
+        x: computeX(d, i),
+        y: computeY(d, i),
+        height: computeHeight(d, i),
+        width: computeWidth(d, i),
+        color: computeColor(d, i),
+        label: computeLabel(d, i)
+    }
+ })
 console.log(viz)
 
 var result = _.map(viz, function(d){
@@ -71,12 +77,15 @@ return result.join('\n')
 
 {% template %}
 
-<rect x="0"
+<rect x="${d.x}"
       y="${d.y}"
-      height="20"
+      height="${d.height}"
       width="${d.width}"
       style="fill:${d.color};
-             stroke-width:3;
+             stroke-width:1;
              stroke:rgb(0,0,0)" />
+<text x="${d.x}" y="${d.y - 10}">
+    ${d.label}
+</text>
 
 {% endviz %}
