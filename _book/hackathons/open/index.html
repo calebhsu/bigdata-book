@@ -5,7 +5,7 @@
         <!-- head:start -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Analysis | book</title>
+        <title>Open | book</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.2.0">
@@ -45,10 +45,10 @@
         
     
     
-    <link rel="next" href="../../hackathons/classmates/report.html" />
+    <link rel="next" href="../../hackathons/open/warmup.html" />
     
     
-    <link rel="prev" href="../../hackathons/classmates/warmup.html" />
+    <link rel="prev" href="../../hackathons/birdstrikes/report.html" />
     
 
         <!-- head:end -->
@@ -56,7 +56,7 @@
     <body>
         <!-- body:start -->
         
-    <div class="book" data-level="2.2.3" data-basepath="../.." data-revision="Wed Sep 30 2015 16:39:45 GMT-0600 (Mountain Daylight Time)">
+    <div class="book" data-level="2.5" data-basepath="../.." data-revision="Wed Sep 30 2015 16:39:45 GMT-0600 (Mountain Daylight Time)">
     
 
 <div class="book-summary">
@@ -586,7 +586,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
+        <li class="chapter " data-level="2.2.3" data-path="hackathons/classmates/analysis.html">
             
                 
                     <a href="../../hackathons/classmates/analysis.html">
@@ -708,7 +708,7 @@
             
         </li>
     
-        <li class="chapter " data-level="2.5" data-path="hackathons/open/index.html">
+        <li class="chapter active" data-level="2.5" data-path="hackathons/open/index.html">
             
                 
                     <a href="../../hackathons/open/index.html">
@@ -869,58 +869,22 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="analysis">Analysis</h1>
-<p>After completing the warmup exercises, your task is to do four more slightly
-more challenges analyses.</p>
-<h2 id="how-many-students-like-sushi-as-their-favorite-food">How many students like sushi as their favorite food?</h2>
-<p><pre><code>return _.size(_.filter(data.comments, function(comments) {
-    var clean = comments.body.toString().toLowerCase()
-    return _.includes(clean, &quot;sushi&quot;)
-}))</code></pre></p>
-<p>The answer is 5.</p>
-<h2 id="who-are-the-students-liking-python-the-most">Who are the students liking Python the most?</h2>
-<p><pre><code>var text = _.filter(data.comments, function(comments) {
-    var clean = comments.body.toString().toLowerCase()
-    return _.includes(clean, &quot;python&quot;)
-})
-var body = _.pluck(text, &quot;body&quot;)
-return _.map(body, function(names) {
-    var final = _.first(names.split(&apos;\n&apos;))
-    return final.split(&apos;: &apos;)[1].trim()
-})</code></pre></p>
-<p>Their names are William Farmer,Heather Witte,Zach Lamb,Zhili Yang,John Cronk,Denis Kazakov,Caleb Hsu,Karen Blakemore,Sanketh S Shetty,Andrey Shprengel.</p>
-<h2 id="are-there-more-javascript-lovers-or-java-lovers">Are there more Javascript lovers or Java lovers?</h2>
-<p><pre><code>var javascript = _.size(_.filter(data.comments, function(comments) {
-    var clean = comments.body.toString().toLowerCase()
-    return _.includes(clean, &quot;javascript&quot;)
-}))
-
-var java = _.size(_.filter(data.comments, function(comments) {
-    var clean = comments.body.toString().toLowerCase()
-    if (_.includes(clean, &quot;javascript&quot;) == false) {
-        return _.includes(clean, &quot;java&quot;)
-    }
-    
-}))    
-
-if (javascript &gt; java) {
-    return &quot;JavaScript&quot;
-}
-else {
-    return &quot;Java&quot;
-}</code></pre></p>
-<p>The answer is Java.</p>
-<h2 id="who-like-the-same-food-as-kjblakemore">Who like the same food as <code>kjblakemore</code>?</h2>
-<p><pre><code>var user = _.find(data.comments, {user: {login: &quot;kjblakemore&quot;}}).body
-var food = user.split(&apos;\n&apos;)[3].split(&apos;: &apos;)[1]
-
-var students = _.filter(data.comments, function(comments) {
-    var clean = comments.body.toString().toLowerCase()
-    food = food.toLowerCase()
-    return _.includes(clean, food)
-})
-return _.pluck(students, &quot;user.login&quot;)</code></pre></p>
-<p>Their names are kjblakemore.</p>
+                        <h1 id="open">Open</h1>
+<p>This is an open hackathon. Choose any dataset you have worked on so far and
+pose new questions. Produce a complete report consisting of analysis and
+visualization using Javascript / SVG. Optionally, you can choose a new
+dataset you found online.</p>
+<h2 id="data">Data</h2>
+<p>Use the <code>{% data %}</code> tag to import JSON data to analyze.</p>
+<h2 id="team">Team</h2>
+<p>Divide your team into two smaller units of two or three. Try to balance the skills
+so that each unit has someone strong in SVG and someone strong in Javascript analysis.</p>
+<h2 id="questions">Questions</h2>
+<p>Each unit needs to generate a report that addresses N question, where N is the
+number of members in the unit (N=2 or 3). Each question should be a new
+question that has not bee raised before. You can go back to skim others&apos;
+past reports to get a sense of what questions have not been asked before. If you
+opt to use a dataset, any question is guaranteed to be new.</p>
 
                     
                     </section>
@@ -931,10 +895,10 @@ return _.pluck(students, &quot;user.login&quot;)</code></pre></p>
         </div>
 
         
-        <a href="../../hackathons/classmates/warmup.html" class="navigation navigation-prev " aria-label="Previous page: Warmup"><i class="fa fa-angle-left"></i></a>
+        <a href="../../hackathons/birdstrikes/report.html" class="navigation navigation-prev " aria-label="Previous page: Report"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../../hackathons/classmates/report.html" class="navigation navigation-next " aria-label="Next page: Report"><i class="fa fa-angle-right"></i></a>
+        <a href="../../hackathons/open/warmup.html" class="navigation navigation-next " aria-label="Next page: Warmup"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
