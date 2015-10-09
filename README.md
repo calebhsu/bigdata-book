@@ -2,6 +2,12 @@
 
 Everything I've done and learned from the Big Data HCI course
 
+### Topics Covered
+- Lodash
+- Tableau
+- SVG visualization
+- MongoDB
+
 # Install
 
 Run this to install dependencies
